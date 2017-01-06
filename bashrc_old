@@ -1,0 +1,51 @@
+# ~/.bashrc: executed by bash(1) for non-login shells.
+# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
+# for examples
+
+PS1='(\A)[\u:\h] \w $ '
+
+alias ll='ls -l'
+alias la='ls -A'
+alias l='ls -CF'
+alias ls='ls -F'
+alias vi='vim'
+alias bt='btdownloadcurses --max_upload_rate'
+alias f='fortune'
+alias fort='fortune /usr/pkg/share/games/fortune/calvin'
+alias code='cd ~/code/'
+alias ssh='ssh -o VisualHostKey=yes'
+alias lll='xscreensaver-command -lock'
+alias y='youtube-dl -f 18 -t'
+alias lt="$HOME/apps/LightTable/LightTable"
+alias mci='mvn clean install'
+alias mdt='mvn dependency:tree'
+alias mve='mvn eclipse:eclipse'
+alias mvddu='mvn versions:display-dependency-updates'
+alias jsearch='grep -inr --color --include=*.java --include=*.groovy'
+alias ec='emacs -nw'
+alias clojure='rlwrap java -jar $HOME/apps/clojure/clojure-1.6.0.jar'
+alias ff='/usr/bin/firefox'
+
+# umask
+#umask 027
+umask 022
+
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+
+export EDITOR=emacs
+export M2_HOME=/usr/local/maven
+export M2=$M2_HOME/bin
+export JAVA_HOME=/usr/local/jdk
+export IDE_HOME=$HOME/apps/idea
+export JYTHON_HOME=/usr/local/jython
+export PYPY_HOME=/usr/local/pypy
+export ANDROID_HOME=/home/negated/apps/android-sdk-linux
+export GOROOT=/usr/local/go
+export GROOVY_HOME=/home/negated/apps/groovy
+export GRADLE_HOME=$HOME/apps/gradle
+export PATH=$JAVA_HOME/jre/bin:$PATH:/home/negated/bin:/usr/local/bin:/usr/local/sbin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$SBT_HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/pkg/bin:/usr/pkg/sbin:/usr/games:$M2:$GOROOT/bin:$JYTHON_HOME/bin:$TYPESAFE_HOME/bin:$GROOVY_HOME/bin:$PYPY_HOME/bin:$ANDROID_HOME/build-tools/19.0.1:$DEVKITARM_HOME/bin:$GRADLE_HOME/bin:~/apps/android-studio/bin:$HOME/apps/bin:$IDE_HOME/bin
+export USE_CCACHE=1
+export HIST_SIZE=10000
+export IFS=$'\n\t'

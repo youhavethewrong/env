@@ -1,3 +1,5 @@
+# ~/.bashrc: executed by bash(1) for non-login shells.
+
 PS1='(\A)[\u:\h] \w $ '
 
 if ! pgrep -u "$USER" ssh-agent > /dev/null; then

@@ -2,11 +2,30 @@
 
 PS1='(\A)[\u:\h] \w $ '
 
-if ! pgrep -u "$USER" ssh-agent > /dev/null; then
-    ssh-agent > ~/.ssh-agent-thing
+# Clear existing broken ssh-agent environment
+#
+if [ ! -f "${SSH_AUTH_SOCK}" ] ; then
+  export SSH_AUTH_SOCK=""
 fi
-if [[ "$SSH_AGENT_PID" == "" ]]; then
-    eval "$(<~/.ssh-agent-thing)"
+
+# if ssh auth forwarding is enabled, use it and dont start keychain
+if [ "${SSH_AUTH_SOCK}x" == "x" ]; then
+  if [ -x /usr/bin/keychain ] ; then
+    keychain -q id_ed25519 id_rsa
+    if [ -f ~/.keychain/$HOSTNAME-sh ] ; then
+      source ~/.keychain/$HOSTNAME-sh
+    fi
+  fi
+fi
+
+# If we have ssh-agent running, forward it to the next host,
+# otherwise dont try to use key authentication at all.
+if [ "${SSH_AUTH_SOCK}x" == "x" ]; then
+  # if we dont have an auth sock, dont use pub key identification
+  alias ssh='ssh -o PubkeyAuthentication=no'
+else
+  # We do have an auth sock, use auth forwarding
+  alias ssh='ssh -A'
 fi
 
 alias ll='ls -l'

@@ -1,0 +1,8 @@
+[user]
+	name = ESC
+	email = youhavethewrong@gmail.com
+
+[color]
+    ui = auto
+[push]
+	default = matching

@@ -1,6 +1,6 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 
-PS1='(\e[38;5;160m\A\e[39m)[\e[38;5;214m\u\e[39m:\e[93m\h\e[39m] \e[92m\w\e[39m $ '
+PS1='(\A)[\e[38;5;214m\u\e[39m:\e[93m\h\e[39m] \e[92m\w\e[39m $ '
 
 # Clear existing broken ssh-agent environment
 #

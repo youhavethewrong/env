@@ -115,6 +115,7 @@ alias mvddu='mvn versions:display-dependency-updates'
 alias jsearch='grep -inr --color --include=*.java --include=*.groovy'
 alias clojure='rlwrap java -jar $HOME/apps/clojure/clojure-1.6.0.jar'
 alias ff='/usr/bin/firefox'
+alias music='/usr/bin/audacious'
 
 LIBZ=$HOME/apps/lib
 export PKG_CONFIG_PATH=$LIBZ/pkgconfig

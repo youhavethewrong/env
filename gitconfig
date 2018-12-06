@@ -1,8 +1,10 @@
 [user]
 	name = ESC
 	email = youhavethewrong@gmail.com
-
+[merge]
+        tool = kdiff3
+        conflictstyle = diff3
 [color]
-    ui = auto
+        ui = auto
 [push]
 	default = matching

@@ -122,7 +122,7 @@ font:
     #style: Italic
 
   # Point size
-  size: 12.0
+  size: 14.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -158,67 +158,67 @@ draw_bold_text_with_bright_colors: true
 
 
 # Colors (One Dark)
-colors:
-  # Default colors
-  primary:
-    background: '0x282c34'
-    foreground: '0xabb2bf'
-
-  # Cursor colors
-  cursor:
-    text: '0x282c34'
-    cursor: '0xabb2bf'
-
-  # Normal colors
-  normal:
-    black:   '0x282c34'
-    red:     '0xe06c75'
-    green:   '0x98c379'
-    yellow:  '0xe5c07b'
-    blue:    '0x61afef'
-    magenta: '0xc678dd'
-    cyan:    '0x56b6c2'
-    white:   '0xabb2bf'
-
-  # Bright colors
-  bright:
-    black:   '0x3e4452'
-    red:     '0xbe5046'
-    green:   '0x98c379'
-    yellow:  '0xd19a66'
-    blue:    '0x61afef'
-    magenta: '0xc678dd'
-    cyan:    '0x56b6c2'
-    white:   '0x5c6370'
-
-# # Colors (PaperColor - Light)
 # colors:
 #   # Default colors
 #   primary:
-#     background: '0xEEEEEE'
-#     foreground: '0x4D4D4C'
+#     background: '0x282c34'
+#     foreground: '0xabb2bf'
+
+#   # Cursor colors
+#   cursor:
+#     text: '0x282c34'
+#     cursor: '0xabb2bf'
 
 #   # Normal colors
 #   normal:
-#     black:   '0xEDEDED'
-#     red:     '0xD7005F'
-#     green:   '0x718C00'
-#     yellow:  '0xD75F00'
-#     blue:    '0x4271AE'
-#     magenta: '0x8959A8'
-#     cyan:    '0x3E999F'
-#     white:   '0x4D4D4C'
+#     black:   '0x282c34'
+#     red:     '0xe06c75'
+#     green:   '0x98c379'
+#     yellow:  '0xe5c07b'
+#     blue:    '0x61afef'
+#     magenta: '0xc678dd'
+#     cyan:    '0x56b6c2'
+#     white:   '0xabb2bf'
 
 #   # Bright colors
 #   bright:
-#     black:   '0x969694'
-#     red:     '0xD7005F'
-#     green:   '0x718C00'
-#     yellow:  '0xD75F00'
-#     blue:    '0x4271AE'
-#     magenta: '0x8959A8'
-#     cyan:    '0x3E999F'
-#     white:   '0xF5F5F5'
+#     black:   '0x3e4452'
+#     red:     '0xbe5046'
+#     green:   '0x98c379'
+#     yellow:  '0xd19a66'
+#     blue:    '0x61afef'
+#     magenta: '0xc678dd'
+#     cyan:    '0x56b6c2'
+#     white:   '0x5c6370'
+
+# Colors (PaperColor - Light)
+colors:
+  # Default colors
+  primary:
+    background: '0xEEEEEE'
+    foreground: '0x4D4D4C'
+
+  # Normal colors
+  normal:
+    black:   '0xEDEDED'
+    red:     '0xD7005F'
+    green:   '0x718C00'
+    yellow:  '0xD75F00'
+    blue:    '0x4271AE'
+    magenta: '0x8959A8'
+    cyan:    '0x3E999F'
+    white:   '0x4D4D4C'
+
+  # Bright colors
+  bright:
+    black:   '0x969694'
+    red:     '0xD7005F'
+    green:   '0x718C00'
+    yellow:  '0xD75F00'
+    blue:    '0x4271AE'
+    magenta: '0x8959A8'
+    cyan:    '0x3E999F'
+    white:   '0xF5F5F5'
 
 # Visual Bell
 #
@@ -241,7 +241,7 @@ colors:
 #   - Linear
 #
 # Specifying a `duration` of `0` will disable the visual bell.
-visual_bell:
+bell:
   animation: EaseOutExpo
   duration: 0
   color: '0xffffff'
@@ -267,9 +267,9 @@ background_opacity: 0.99
 #
 # All available `mods` and `action` values are documented in the key binding
 # section.
-mouse_bindings:
-  - { mouse: Right, action: Copy }
-  - { mouse: Middle, action: PasteSelection }
+# mouse_bindings:
+#   - { mouse: Right, action: Copy }
+#   - { mouse: Middle, action: PasteSelection }
 
 mouse:
   # Click settings
@@ -572,3 +572,5 @@ key_bindings:
   - { key: NumpadEnter,             chars: "\n"                              }
   - { key: F,        mods: Alt,     chars: "\x1bf"                           }
   - { key: B,        mods: Alt,     chars: "\x1bb"                           }
+  - { key: V,              mods: Control|Shift, mode: ~Vi,        action: Paste            }
+  - { key: C,              mods: Control|Shift,                   action: Copy             }
